@@ -1,0 +1,61 @@
+#main{position:relative;isolation:isolate}
+.liquid-flow{position:absolute;inset:0 0 auto;width:100%;pointer-events:none;z-index:5;overflow:hidden}
+.liquid-flow-still{opacity:.25}
+.mixology{position:relative;background:#142c24;color:#f8f0dc}
+.mix-stage{height:min(820px,90svh);min-height:600px;position:relative;isolation:isolate;overflow:hidden}
+.mix-stage .film video{object-position:50% 50%}
+.mix-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#142c24 0%,#142c2480 18%,transparent 55%),linear-gradient(90deg,#122a2270,transparent 65%)}
+.mix-kicker{position:absolute;top:45px;left:7%;color:#f7e5ae}
+.mix-copy{position:absolute;bottom:95px;left:7%;max-width:55%;text-shadow:0 2px 30px #142c2470}
+.mix-copy h2{font-size:clamp(64px,7.6vw,118px);line-height:.97;letter-spacing:-.035em}
+.mix-copy p{font-family:Satisfy,cursive;color:#f1d18c;font-size:clamp(24px,2.3vw,36px);margin-top:25px}
+.mix-stage .film-control{bottom:auto;top:36px;right:5%}
+.mix-trigger{position:absolute;bottom:100px;right:6%;display:flex;gap:18px;align-items:center;padding:22px 25px;color:#fff2ce;border:1px solid #ecd29580;border-radius:5px;background:linear-gradient(120deg,#a99a7038,#18382d70);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 15px 60px #071b2630;font-size:19px;text-align:left;transition:transform .35s,background .35s,border-color .35s}
+.mix-trigger:hover{transform:translateY(-5px);background:#45604bd0;border-color:#f0d58c}
+.mix-trigger small{display:block;font-size:8px;letter-spacing:.14em;margin-top:8px;color:#e4d5ae}
+.mix-trigger-icon{font-size:29px;color:#e8c879}
+.mix-trigger>span:last-child{margin-left:12px;font-size:25px}
+.pour-landing{position:relative;display:flex;justify-content:center;align-items:center;gap:70px;min-height:240px;padding:10px 7% 30px;background:linear-gradient(#142c24,#19382d)}
+.pour-glass{display:block;width:180px;height:210px;flex-shrink:0;overflow:visible}
+.pour-caption{font-size:9px;letter-spacing:.21em;color:#cabc93;width:210px}
+.pour-caption:first-child{text-align:right}
+.glass-fill{transform-origin:center bottom}.glass-splash{opacity:0}.glass-bubbles{opacity:0}
+.mix-dialog{width:min(840px,92vw);max-height:90svh;padding:0;border:1px solid #d4b56b66;border-radius:12px;color:#f7efd9;background:#17382ef2;box-shadow:0 30px 120px #051b17a6;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);overflow-y:auto;overscroll-behavior:contain}
+.mix-dialog::backdrop{background:#071c16a6;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.mix-dialog[open]{animation:mix-arrive .3s ease-out}
+.mix-close{position:absolute;right:18px;top:16px;width:40px;height:40px;z-index:3;border:1px solid #dfc99070;border-radius:50%;color:#f8ecd0;background:#183d34;font-size:26px;line-height:1}
+.mix-dialog-head{padding:32px 38px 22px}
+.mix-dialog-head .eyebrow{color:#ddc07c;font-size:9px}
+.mix-dialog-head h2{font-size:43px;margin-top:10px;padding-right:25px}
+.mix-tabs{display:flex;gap:8px;margin:0 38px 24px;border-bottom:1px solid #e7d5a43b}
+.mix-tabs button{flex:1;background:none;color:#ded8c4;border:0;border-bottom:2px solid transparent;padding:14px 7px;font-size:15px;transition:color .2s,border-color .2s}
+.mix-tabs button[aria-selected=true]{border-bottom-color:#e5c471;color:#f5d58f}
+.mix-panel{display:grid;grid-template-columns:.85fr 1.15fr;min-height:285px;animation:mix-arrive .3s ease-out}
+.mix-panel figure{position:relative;margin:0;min-height:285px;overflow:hidden}
+.mix-panel img{width:100%;height:100%;position:absolute;object-fit:cover;object-position:40% center}
+.mix-panel figure::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,#10271dd9)}
+.mix-panel figcaption{position:absolute;bottom:27px;left:25px;right:15px;font-family:Satisfy,cursive;color:#f7e8b9;font-size:29px;z-index:1}
+.mix-ideas{padding:0 30px 0 25px;align-self:center}
+.mix-ideas article{display:flex;gap:13px;padding:17px 0;border-bottom:1px solid #e7d5a426}
+.mix-ideas article:last-child{border:0}
+.mix-ideas article>span{font-size:9px;color:#c7a660;letter-spacing:.12em;padding-top:5px}
+.mix-ideas h3{font-size:25px;line-height:1.1;letter-spacing:0}
+.mix-ideas p{font-size:14px;line-height:1.5;color:#d3d3be;margin-top:9px}
+.mix-dialog-foot{margin:0;padding:22px 38px;color:#ccb67e;font-size:8px;letter-spacing:.22em;text-align:right}
+@keyframes mix-arrive{from{opacity:.4;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.mix-copy{bottom:195px;max-width:80%}.mix-trigger{bottom:55px;left:7%;right:auto}.mix-stage{min-height:680px}.pour-landing{gap:25px}.pour-caption{width:170px}}
+@media(max-width:767px){
+  .liquid-thread{stroke-width:2.5}.liquid-halo{stroke-width:9}
+  .mix-stage{height:800px;min-height:0;max-height:none}
+  .mix-stage .film{height:470px}.mix-stage .film video{object-position:46% center}
+  .mix-shade{background:linear-gradient(0deg,#142c24 0%,#142c24 39%,transparent 66%)}
+  .mix-kicker{top:28px;left:8%;font-size:8px}
+  .mix-stage .film-control{top:58px;right:7%;font-size:9px}
+  .mix-copy{left:8%;bottom:160px;max-width:88%}.mix-copy h2{font-size:67px}.mix-copy p{font-size:25px;margin-top:20px}
+  .mix-trigger{left:8%;right:8%;bottom:43px;padding:18px;justify-content:space-between;font-size:19px;gap:12px}.mix-trigger small{font-size:7px}.mix-trigger>span:last-child{margin-left:0}
+  .pour-landing{min-height:220px;gap:6px;padding:0 6% 20px}.pour-caption{font-size:7px;line-height:1.8;letter-spacing:.1em;width:85px}.pour-glass{width:140px;height:163.333px}
+  .mix-dialog{width:94vw;max-width:94vw;max-height:90svh;border-radius:9px}.mix-dialog-head{padding:29px 22px 15px}.mix-dialog-head h2{font-size:32px;padding-right:22px}.mix-tabs{margin:0 20px 18px;gap:0}.mix-tabs button{font-size:15px;padding:13px 5px}
+  .mix-panel{grid-template-columns:1fr;min-height:0}.mix-panel figure{height:150px;min-height:0}.mix-panel img{object-position:50% 55%}.mix-panel figcaption{bottom:17px;font-size:26px}.mix-ideas{padding:5px 23px}.mix-ideas article{padding:13px 0}.mix-ideas h3{font-size:22px}.mix-ideas p{font-size:13px;margin-top:6px}.mix-dialog-foot{padding:15px 23px;font-size:7px}
+}
+@media(max-width:380px){.mix-copy h2{font-size:59px}.mix-trigger{font-size:17px}.mix-trigger small{letter-spacing:.06em}.mix-dialog-head h2{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.mix-dialog[open],.mix-panel{animation:none}.mix-trigger{transition:none}.mix-trigger:hover{transform:none}}

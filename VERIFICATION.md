@@ -5,8 +5,8 @@ Final verification completed locally on 15 October 2026 before deployment.
 ## Results
 
 - Production build: **passed** with Vite 7.3.7, React 19.3.0 and GSAP 3.15.0.
-- Build/asset tests: **3 passed, 0 failed**.
-- Browser checks: **16 groups passed**, using installed Chrome through Playwright.
+- Build/asset tests: **4 passed, 0 failed**.
+- Browser checks: **17 groups passed**, using installed Chrome through Playwright.
 - Browser runtime errors: **0** in the desktop/mobile primary flow.
 - Visual review: desktop hero, both film chapters, collection and mobile hero/collection screenshots inspected. Mobile and tablet headline clipping and Classic bottle cropping were corrected.
 
@@ -26,9 +26,9 @@ Final verification completed locally on 15 October 2026 before deployment.
 
 ## Build and media checks
 
-Production entry scripts, stylesheet and icon resolve under `/tepeeya.github.io/`. All six MP4 files have `moov` metadata before the media payload for fast-start playback. Each desktop film is under 3.5 MB, each mobile film is under 1 MB, and all six together are under 10 MB. All fourteen photograph/poster WebP files are present in the build.
+Production entry scripts, stylesheet and icon resolve under `/tepeeya.github.io/`. All eight MP4 files have `moov` metadata before the media payload for fast-start playback. Each desktop film is under 3.5 MB and each mobile film is under 1 MB. The original six together remain under 10 MB. All eighteen photograph/poster WebP files are present in the build.
 
-The application JavaScript is approximately **356 kB / 120.5 kB gzip**. CSS is approximately **28.0 kB / 6.7 kB gzip**. Desktop films total **7.21 MB**, mobile alternatives total **1.83 MB**. Media is not all downloaded on entry; those totals are complete inventory sizes.
+The application JavaScript is approximately **366.42 kB / 123.61 kB gzip**. CSS is approximately **34.40 kB / 8.20 kB gzip**. Desktop films total **9.06 MB**, mobile alternatives total **2.41 MB**. Media is not all downloaded on entry; those totals are complete inventory sizes.
 
 ## Verification limits and handoff
 
@@ -62,4 +62,10 @@ The closing section and footer were subsequently refined into a continuous cream
 The in-app preview exposed an invisible hero video while its playback time advanced. Replacing the CSS mask on the video with a separate gradient overlay and reloading restored visible footage. All three films were visually checked in the actual in-app preview. Playback now also resumes on returning to a visible tab while respecting manual pause.
 
 All five thumbnail frames have identical square proportions, verified at 320, 390, 768, 1024 and 1440 px widths. Classic uses the supplied general pineapple bottle photograph in its collection thumbnail; the detail dialog retains the explicitly labelled Classic crop. Production build, 3 asset tests and 16 browser groups passed after these fixes.
+
+## Mixology and liquid-flow update
+
+The latest production build, **4 asset tests and 17 browser groups passed**. The added browser coverage verifies the new film's advancing playback, all three popup categories and supplied drink titles, arrow-key navigation, Escape/focus return, mobile dialog fit at 320 px, and background-scroll restoration. The SVG path reaches the glass, reverses on upward scrolling, and ignores pointer input. Reduced motion leaves all four video sources unset until explicit playback and displays the static golden accent. The full responsive suite still passes at 320, 390, 768, 1024 and 1440 px.
+
+Both new optimized MP4 streams were fully decoded with FFmpeg: **2 passed, no decoding errors**. The original six video files remain unchanged. Desktop mixology, desktop popup, mobile popup and glass-finish screenshots were inspected. No new runtime dependencies were added. The manual-only deployment workflow is unchanged; this update was not deployed.
 

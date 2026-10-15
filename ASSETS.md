@@ -9,10 +9,13 @@ All website assets are present in `public/media/`. No replacement imagery was ge
 | `kling_20261015_VIDEO_Create_a_6_135_0.mp4` | `v1c.mp4` | `hero.mp4` | 2,166,079 | 587,008 |
 | `gemini_generated_video_b8305b40.mp4` | `v2.mp4` | `origins.mp4` | 2,794,678 | 699,536 |
 | `gemini_generated_video_26669c6d.mp4` | `v3.mp4` | `sensory.mp4` | 2,251,718 | 539,908 |
+| New mixology film | `gemini_generated_video_b64c1443.mp4` | `mixology.mp4` | 1,850,816 | 583,969 |
 
 The user explicitly confirmed these mappings. The long filenames in the brief were not present; the attached aliases resolve all three requirements. Originals total 22,029,655 bytes; optimized desktop renditions total 7,212,475 bytes (about 67% smaller). Mobile renditions total 1,826,452 bytes. The browser loads the appropriate rendition, not both. Posters are frames at approximately 3 seconds from each film.
 
 Encoding: desktop width 1280, H.264 CRF 23, keyframe interval 12; mobile width 768, CRF 26, interval 48; original frame rate; YUV420p, fast-start, no audio. Story posters remain visible until video is ready.
+
+The added mixology source is 3,397,830 bytes, approximately ten seconds at 24 fps. Its desktop/mobile derivatives use the same widths and quality settings, both with a 48-frame keyframe interval and no audio. `mixology-poster.webp` (62,226 bytes) is the frame at approximately eight seconds. Popup stills `mix-pour.webp` (26,794 bytes), `mix-golden.webp` (26,740 bytes) and `mix-serve.webp` (37,942 bytes) come from approximately three, six and nine seconds. No replacement drink photography was generated. The original six film derivatives are unchanged.
 
 ## Original photographs
 

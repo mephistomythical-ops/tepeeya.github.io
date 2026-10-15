@@ -4,6 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { flavours, classic, asset } from './content';
 import './styles.css';
+import Mixology from './Mixology';
+import LiquidFlow from './LiquidFlow';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -197,7 +199,9 @@ function App() {
       <section className="interlude"><span className="eyebrow">SLOW DOWN. LOOK CLOSER.</span><p className="reveal">Some moments<br />are better <em>golden.</em></p></section>
       <Chapter id="experience" number="02" title="A feeling," italic="bottled." caption="THE EXPERIENCE" body="The golden glow. The cool of the glass. The delicate rise of bubbles. A little invitation to pause, pour, and be here." name="sensory" poster="sensory-poster.webp" motionOff={motionOff}><div className="sensory-notes"><span>01 · GOLDEN</span><span>02 · CHILLED</span><span>03 · EFFERVESCENT</span></div></Chapter>
       <Collection motionOff={motionOff} />
+      <Mixology motionOff={motionOff} Film={Film} />
       <section className="closing"><img src={asset('lineup.webp')} width="1672" height="941" loading="lazy" alt="The five TEPEEYA flavours together: Classic, Mango, Spicy, OG and Honey" /><div><p className="eyebrow">A LITTLE TROPICAL. ENTIRELY TEPEEYA.</p><h2>Make room<br />for <em>golden moments.</em></h2><a className="text-link" href="#flavours">Explore the collection <span aria-hidden="true">↗</span></a></div></section>
+      <LiquidFlow motionOff={motionOff} />
     </main>
     <footer><div className="footer-top"><div><img className="footer-logo" src={asset('brand-logo.webp')} width="1000" height="1000" loading="lazy" alt="TEPEEYA brand emblem" /><p className="brand-tagline" lang="es">Un Fermento Mexicano</p></div><div><p className="eyebrow">EXPLORE</p><a href="#origins">Our story</a><a href="#experience">The experience</a><a href="#flavours">The collection</a></div><div><p className="eyebrow">SAY HELLO</p><a href={`mailto:${classic.email}`}>{classic.email}</a><p className="maker">{classic.maker}</p></div><div><p className="eyebrow">FOLLOW ALONG</p><span className="social-placeholder" aria-disabled="true">Instagram ↗<small>Link coming soon</small></span><span className="social-placeholder" aria-disabled="true">Facebook ↗<small>Link coming soon</small></span></div></div><div className="footer-signature"><div className="brand-wordmark"><img src={asset('wordmark.webp')} width="930" height="436" alt="TEPEEYA Tepache" /></div><p className="brand-tagline" lang="es">Un Fermento Mexicano</p></div><div className="footer-bottom"><span>© {new Date().getFullYear()} TEPEEYA</span><span>TEPACHE · KERALA, INDIA</span><button onClick={() => setPaused(!paused)} aria-pressed={motionOff} disabled={reduced}>{reduced ? 'Reduced motion enabled' : paused ? 'Enable motion' : 'Pause motion'}</button></div></footer>
   </div>;

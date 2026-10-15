@@ -25,8 +25,16 @@ test('six optimized films have fast-start metadata and remain within the media b
 });
 
 test('every supplied product derivative and video poster is included',()=>{
-  for(const file of ['bottle','lineup','classic','mango','spicy','og','honey','logo','wordmark','brand-logo','classic-label','hero-poster','origins-poster','sensory-poster']){
+  for(const file of ['bottle','lineup','classic','mango','spicy','og','honey','logo','wordmark','brand-logo','classic-label','hero-poster','origins-poster','sensory-poster','mixology-poster','mix-pour','mix-golden','mix-serve']){
     const bytes=readFileSync(`dist/media/${file}.webp`);
     assert.equal(bytes.toString('ascii',8,12),'WEBP');
+  }
+});
+
+test('new mixer film has desktop/mobile fast-start files within budget',()=>{
+  for(const size of ['', '-mobile']) {
+    const file=readFileSync(`dist/media/mixology${size}.mp4`);
+    assert.ok(file.indexOf('moov')>0 && file.indexOf('moov')<file.indexOf('mdat'));
+    assert.ok(file.length<(size?1000000:3500000));
   }
 });
