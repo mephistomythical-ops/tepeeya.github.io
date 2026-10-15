@@ -6,7 +6,7 @@ Final verification completed locally on 15 October 2026 before deployment.
 
 - Production build: **passed** with Vite 7.3.7, React 19.3.0 and GSAP 3.15.0.
 - Build/asset tests: **3 passed, 0 failed**.
-- Browser checks: **15 groups passed**, using installed Chrome through Playwright.
+- Browser checks: **16 groups passed**, using installed Chrome through Playwright.
 - Browser runtime errors: **0** in the desktop/mobile primary flow.
 - Visual review: desktop hero, both film chapters, collection and mobile hero/collection screenshots inspected. Mobile and tablet headline clipping and Classic bottle cropping were corrected.
 
@@ -28,7 +28,7 @@ Final verification completed locally on 15 October 2026 before deployment.
 
 Production entry scripts, stylesheet and icon resolve under `/tepeeya.github.io/`. All six MP4 files have `moov` metadata before the media payload for fast-start playback. Each desktop film is under 3.5 MB, each mobile film is under 1 MB, and all six together are under 10 MB. All fourteen photograph/poster WebP files are present in the build.
 
-The application JavaScript is approximately **356 kB / 120.5 kB gzip**. CSS is approximately **27.7 kB / 6.7 kB gzip**. Desktop films total **7.21 MB**, mobile alternatives total **1.83 MB**. Media is not all downloaded on entry; those totals are complete inventory sizes.
+The application JavaScript is approximately **356 kB / 120.5 kB gzip**. CSS is approximately **28.0 kB / 6.7 kB gzip**. Desktop films total **7.21 MB**, mobile alternatives total **1.83 MB**. Media is not all downloaded on entry; those totals are complete inventory sizes.
 
 ## Verification limits and handoff
 
@@ -55,4 +55,11 @@ All six complete optimized MP4 streams were additionally decoded with FFmpeg to 
 The final pass includes Macondo display typography, Alegreya Sans body typography, feathered product imagery, soft section gradients and restrained scroll-linked film scale. All 15 browser check groups and 3 build/asset tests were rerun after these changes. The complete video decoding checks remain valid because the video files are unchanged.
 
 The closing section and footer were subsequently refined into a continuous cream surface with feathered lineup photography and the original gold wordmark. Desktop and mobile footer screenshots were inspected, with no horizontal overflow. The production build, all 3 asset tests and all 15 browser groups passed again after the footer refinement.
+
+
+## Preview playback and collection follow-up
+
+The in-app preview exposed an invisible hero video while its playback time advanced. Replacing the CSS mask on the video with a separate gradient overlay and reloading restored visible footage. All three films were visually checked in the actual in-app preview. Playback now also resumes on returning to a visible tab while respecting manual pause.
+
+All five thumbnail frames have identical square proportions, verified at 320, 390, 768, 1024 and 1440 px widths. Classic uses the supplied general pineapple bottle photograph in its collection thumbnail; the detail dialog retains the explicitly labelled Classic crop. Production build, 3 asset tests and 16 browser groups passed after these fixes.
 

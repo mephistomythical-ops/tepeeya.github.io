@@ -44,3 +44,5 @@ No core visual asset is missing after the confirmed video mapping and supplied i
 - Ingredients for all five variants were confirmed by the user on 14 October 2026. They are in `src/content.js`; OG and Honey use substitutions, not additional white sugar. Tasting copy is editorial wording based on those ingredients, awaiting final brand review.
 
 The locally hosted Latin WOFF2 fonts are Satisfy Regular, Macondo Regular, and Alegreya Sans Regular/Bold, from Google Fonts. Macondo and Alegreya Sans use the included SIL OFL licenses; Satisfy uses the included Apache 2.0 license. Original downloaded TTF copies were replaced with the smaller web renditions. No visitor requests Google Fonts.
+
+Classic's square collection thumbnail uses the supplied original pineapple bottle (bottle.webp); its detail dialog retains the explicitly labelled lineup crop (classic.webp). No new product artwork was generated.

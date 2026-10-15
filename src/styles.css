@@ -63,7 +63,7 @@ nav{font-size:14px}.button,.text-link{font-size:14px}.hero-copy>p:not(.eyebrow):
 @media(max-width:767px){.hero-copy>p:not(.eyebrow):not(.brand-tagline){font-size:15px}.chapter-copy>p:not(.eyebrow){font-size:16px}.chapter-footnote{font-size:12px}.intro p:not(.eyebrow),.section-heading>p:not(.eyebrow){font-size:15px}.card-name{font-size:31px}.card-note{font-size:12px;min-height:38px}.card-discover{font-size:10px}.flavour-details>p{font-size:15px}.label-details dd{font-size:14px}.sensory-notes{font-size:9px}.dialog-copy>p:not(.eyebrow){font-size:16px}.dialog-section p{font-size:14px}.footer-signature .brand-tagline{font-size:26px!important}}
 @media(max-width:380px){.sensory-notes{font-size:8px}.card-name{font-size:29px}.card-discover{font-size:9px}}
 /* Soft joins and feathered photography create a continuous visual flow. */
-.hero .film video{mask-image:linear-gradient(#000 0%,#000 82%,transparent 100%)}
+.hero .film::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 82%,var(--green) 100%)}
 .intro{background:radial-gradient(ellipse at 82% 65%,#e6cc8f45,transparent 45%),linear-gradient(#183b30 0px,#f5f1e7 90px);padding-top:145px}
 .intro-photo{mix-blend-mode:multiply;mask-image:radial-gradient(ellipse 68% 66% at 50% 50%,#000 54%,transparent 100%)}
 .chapter-stage::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--scene-in,#f5f1e7) 0%,transparent 4%,transparent 96%,var(--scene-out,#e9dfc7) 100%);z-index:2}
@@ -79,7 +79,7 @@ nav{font-size:14px}.button,.text-link{font-size:14px}.hero-copy>p:not(.eyebrow):
 .card-name{margin-top:12px}.closing{background:#f5f1e7}
 .closing>img{mix-blend-mode:multiply;mask-image:linear-gradient(90deg,#000 90%,transparent 100%)}
 .footer-signature{border-radius:58% 42% 44% 56% / 9% 12% 8% 11%;background:radial-gradient(ellipse at center,#f5f1e7 58%,#e7ddc5 100%)}
-@media(max-width:767px){.hero .film{height:490px}.hero .film video{mask-image:linear-gradient(#000 0%,#000 73%,transparent 100%)}.hero-copy{padding-top:10px}.intro{padding-top:110px}.chapter-top{top:35px}.chapter-bottom{bottom:83px}.closing>img{mask-image:linear-gradient(180deg,#000 91%,transparent 100%)}.card-image img{mask-image:radial-gradient(ellipse 76% 69% at 50% 48%,#000 65%,transparent 100%)}.card-image.classic img{mask-image:linear-gradient(180deg,transparent,#000 6%,#000 91%,transparent)}.footer-signature{border-radius:55% 45% 50% 50% / 6% 8% 7% 6%}}
+@media(max-width:767px){.hero .film{height:490px}.hero .film::after{background:linear-gradient(transparent 73%,var(--green) 100%)}.hero-copy{padding-top:10px}.intro{padding-top:110px}.chapter-top{top:35px}.chapter-bottom{bottom:83px}.closing>img{mask-image:linear-gradient(180deg,#000 91%,transparent 100%)}.card-image img{mask-image:radial-gradient(ellipse 76% 69% at 50% 48%,#000 65%,transparent 100%)}.card-image.classic img{mask-image:linear-gradient(180deg,transparent,#000 6%,#000 91%,transparent)}.footer-signature{border-radius:55% 45% 50% 50% / 6% 8% 7% 6%}}
 @media(max-width:380px){.hero .film{height:445px}}
 .card-image img,.card-image.classic img{mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 7%,#000 90%,transparent 100%);mask-composite:intersect}
 .card-image.classic img{width:auto;max-width:100%;margin-inline:auto}
@@ -100,3 +100,12 @@ footer{padding:20px 6% 28px;background:#f5f1e7;color:var(--green)}
 .footer-bottom{margin-top:0;color:#53634c}.footer-bottom button{color:var(--green);border:1px solid #183b3045;background:none}
 @media(max-width:1000px){.footer-top{grid-template-columns:1fr 1fr;gap:38px}.closing h2{font-size:62px}}
 @media(max-width:767px){.closing{padding:45px 0 0}.closing>div{padding:0 7% 15px}.closing h2{font-size:48px}.closing>img{width:112%;max-width:none;aspect-ratio:1672/941;object-fit:contain;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 78%,transparent)}footer{padding:12px 7% 28px}.footer-top{padding-top:35px;gap:35px 20px}.footer-top>div:first-child{display:flex;align-items:center;gap:25px}.footer-logo{width:110px;height:110px;flex-shrink:0}.footer-top>div>.brand-tagline{margin-top:0!important;font-size:25px!important;max-width:150px}.footer-signature{margin-top:46px;padding-bottom:25px;gap:8px}.footer-signature .brand-wordmark{--signature-width:clamp(250px,80vw,560px)}.footer-signature .brand-tagline{font-size:25px!important}.footer-bottom{gap:20px 12px}}
+
+/* Consistent square collection frames, including the portrait Classic source. */
+.card-image,.card-image.classic{width:100%;height:auto;aspect-ratio:1;overflow:hidden}
+.card-image img,.card-image.classic img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;margin:0}
+
+
+
+
+

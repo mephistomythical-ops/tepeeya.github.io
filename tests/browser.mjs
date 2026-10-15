@@ -33,6 +33,22 @@ try {
   await page.getByRole('button',{name:'Pause TEPEEYA bottle reveal'}).click();
   assert.equal(await page.locator('.hero video').evaluate(v=>v.paused),true);
   record('Hero playback control pauses the film');
+  // Returning to a visible tab should resume autoplay, but respect a manual pause.
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+  assert.equal(await page.locator('.hero video').evaluate(v=>v.paused),true);
+  await page.getByRole('button',{name:'Play TEPEEYA bottle reveal'}).click();
+  await page.evaluate(() => {
+    Object.defineProperty(document,'hidden',{configurable:true,value:true});
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  assert.equal(await page.locator('.hero video').evaluate(v=>v.paused),true);
+  await page.evaluate(() => {
+    delete document.hidden;
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.waitForFunction(()=>!document.querySelector('.hero video').paused);
+  assert.equal(await page.locator('.hero video').evaluate(v=>getComputedStyle(v).maskImage),'none');
+  record('Returning to a visible tab resumes autoplay and respects manual pause; video has no compositor mask');
   for(const id of ['origins','experience']) {
     await page.evaluate(id=>{const el=document.getElementById(id);window.scrollTo({top:el.offsetTop+innerHeight*.55,behavior:'instant'});},id);
     const video=page.locator(`#${id} video`);
@@ -83,6 +99,9 @@ try {
     await page.setViewportSize({width,height:900});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`overflow at ${width}`);
     assert.ok(await page.locator('h1').evaluate(el=>el.scrollWidth<=el.clientWidth+1),`headline clipping at ${width}`);
+    const frames=await page.locator('.card-image').evaluateAll(els=>els.map(el=>({w:el.clientWidth,h:el.clientHeight})));
+    assert.ok(frames.every(f=>Math.abs(f.w-f.h)<=1),`square thumbnails at ${width}`);
+    assert.ok(frames.every(f=>Math.abs(f.w-frames[0].w)<=1),`equal thumbnail sizes at ${width}`);
   }
   record('No page overflow or clipped hero headline at 320, 390, 768, 1024, 1440 pixels');
   await page.setViewportSize({width:390,height:844});

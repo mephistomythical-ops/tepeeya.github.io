@@ -1,5 +1,5 @@
 export const flavours = [
-  { id: 'classic', name: 'Classic', note: 'Where it all begins.', text: 'Tangy-sweet pineapple, lightly fizzy, with the warm character of cinnamon and cloves.', ingredients: ['Pineapple', 'Boiled water', 'Sugar', 'Cinnamon stick', 'Whole cloves'], profile: ['Pineapple tang', 'Gentle sweetness', 'Warm spice'], colour: '#a18b36', image: 'classic.webp' },
+  { id: 'classic', name: 'Classic', note: 'Where it all begins.', text: 'Tangy-sweet pineapple, lightly fizzy, with the warm character of cinnamon and cloves.', ingredients: ['Pineapple', 'Boiled water', 'Sugar', 'Cinnamon stick', 'Whole cloves'], profile: ['Pineapple tang', 'Gentle sweetness', 'Warm spice'], colour: '#a18b36', image: 'classic.webp', thumbnail: 'bottle.webp' },
   { id: 'mango', name: 'Mango', note: 'A tropical state of mind.', text: 'Mango brings a rounded tropical sweetness to pineapple tang, with cinnamon and cloves in the background.', ingredients: ['Pineapple', 'Boiled water', 'Sugar', 'Cinnamon stick', 'Whole cloves', 'Mango'], profile: ['Tropical mango', 'Pineapple tang', 'Soft spice'], colour: '#b47822', image: 'mango.webp' },
   { id: 'spicy', name: 'Spicy', note: 'Turn up the character.', text: 'Ginger warmth and green-chilli heat meet tangy-sweet pineapple. A spirited expression with a spiced finish.', ingredients: ['Pineapple', 'Boiled water', 'Sugar', 'Cinnamon stick', 'Whole cloves', 'Ginger', 'Green chilli'], profile: ['Ginger warmth', 'Green-chilli heat', 'Bright pineapple'], colour: '#9a4f35', image: 'spicy.webp' },
   { id: 'og', name: 'OG', note: 'An original expression.', text: 'Brown cane sugar takes the place of white sugar, bringing a deeper sweetness to pineapple, cinnamon and cloves.', ingredients: ['Pineapple', 'Boiled water', 'Brown cane sugar', 'Cinnamon stick', 'Whole cloves'], profile: ['Brown cane sweetness', 'Pineapple tang', 'Warm spice'], colour: '#516541', image: 'og.webp' },
@@ -13,3 +13,4 @@ export const classic = {
   email: 'tepeeya.tepache@gmail.com',
 };
 export const asset = (name) => `${import.meta.env.BASE_URL}media/${name}`;
+

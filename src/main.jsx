@@ -50,12 +50,17 @@ function Film({ name, poster, label, hero = false, triggerRef, motionOff }) {
     video.addEventListener('loadedmetadata', ready);
     video.addEventListener('seeked', seek);
     if (video.readyState >= 1) ready();
-    const io = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || document.hidden) video.pause();
+    let inView = false;
+    const syncPlayback = () => {
+      if (!inView || document.hidden) video.pause();
       else if (!scrub && !motionOff && !saveData && !userPaused.current) video.play().catch(() => {});
+    };
+    const io = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      syncPlayback();
     }, { threshold: .15 });
     io.observe(video);
-    const visibility = () => { if (document.hidden) video.pause(); };
+    const visibility = syncPlayback;
     document.addEventListener('visibilitychange', visibility);
     return () => { st?.kill(); io.disconnect(); video.removeEventListener('loadedmetadata', ready); video.removeEventListener('seeked', seek); document.removeEventListener('visibilitychange', visibility); video.pause(); };
   }, [loaded, scrub, motionOff, saveData, triggerRef, touch]);
@@ -134,7 +139,7 @@ function Collection({ motionOff }) {
     <div className="flavour-grid" aria-label="Select a flavour">
       {flavours.map((f, i) => <button key={f.id} className={`flavour-card ${selected === f.id ? 'selected' : ''}`} style={{ '--flavour': f.colour }} aria-pressed={selected === f.id} aria-haspopup="dialog" aria-controls="flavour-dialog" onClick={event => openFlavour(f.id, event.currentTarget)}>
         <span className="card-index">0{i + 1}</span><span className="selected-mark" aria-hidden="true">{selected === f.id ? '✓' : '↗'}</span>
-        <div className={`card-image ${f.id}`}><img src={asset(f.image)} alt={`TEPEEYA ${f.name} bottle`} width="600" height="800" loading="lazy" /></div>
+        <div className={`card-image ${f.id}`}><img src={asset(f.thumbnail || f.image)} alt={`TEPEEYA ${f.name} bottle`} width="600" height="800" loading="lazy" /></div>
         <span className="card-name">{f.name}</span><span className="card-note">{f.note}</span><span className="card-discover">Discover flavour <span aria-hidden="true">↗</span></span>
       </button>)}
     </div>
@@ -199,3 +204,4 @@ function App() {
 }
 
 createRoot(document.getElementById('root')).render(<App />);
+
