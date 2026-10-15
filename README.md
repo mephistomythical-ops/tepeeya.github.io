@@ -73,3 +73,6 @@ Implementation references: [Vite static deployment](https://vite.dev/guide/stati
 
 The header and detail dialogs use the supplied gold TEPEEYA / green Tepache artwork, framed with CSS without redrawing the identity. The footer includes the uploaded complete logo. The tagline is **Un Fermento Mexicano**, set in locally bundled [Satisfy](https://github.com/google/fonts/tree/main/apache/satisfy). Flavour dialogs support Escape, backdrop close, keyboard focus containment, focus return and background scroll locking.
 
+## Typography and visual flow
+
+Macondo provides expressive calligraphic headings, Alegreya Sans carries body text and controls, and Satisfy remains the tagline accent. These are a contemporary brand direction, not a claim of historically authentic Aztec lettering. All four web-font files are hosted locally in WOFF2 format, with their licenses. The original TEPEEYA artwork is unchanged. Soft CSS masks and gradients blend photography into cream and tropical-green surfaces; the story films have restrained scroll-linked scale movement. Reduced-motion mode removes that movement.
