@@ -69,7 +69,7 @@ The new film loads only when its section enters view, with a smaller mobile rend
 ## Remaining work before a public launch
 
 - Brand review of ingredient-based tasting descriptions and final packaging details.
-- Configure real Instagram/Facebook URLs; the current footer entries are clearly labelled “Link coming soon” and are not fake links.
+- Instagram links to the confirmed @tepeeya.tepache profile; email links to tepeeya.tepache@gmail.com. The Facebook URL remains to be configured and is labelled “Link coming soon”.
 - Review the source films' existing generator marks. They were retained; clean approved masters can be supplied later.
 - Check actual iPhone/Safari and Android devices on cellular connections; local automated checks use Chromium with responsive and reduced-motion settings.
 - Choose availability/contact handling when commercial details are ready. No prices or checkout are implemented.
